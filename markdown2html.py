@@ -5,6 +5,7 @@ This module is for converting markdown to html
 import sys
 import os
 def markdown2html(*args):
+    # This function converts markdown to html
     num_args = len(args)
     print(num_args)
     filename = 'README.md'
