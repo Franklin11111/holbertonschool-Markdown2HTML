@@ -15,4 +15,4 @@ def markdown2html(*args):
         exit(0)
 
 if __name__ == "__main__":
-    print(__import__("markdown2html").__doc__)
+    markdown2html('README.md', 'README.html')
