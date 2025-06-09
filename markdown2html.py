@@ -17,6 +17,9 @@ def markdown2html(*args):
     else:
         print()
         exit(0)
+
 print(__import__("markdown2html").__doc__)
+
+
 if __name__ == "__main__":
-    markdown2html('README.md', 'README.html')
+    markdown2html()
