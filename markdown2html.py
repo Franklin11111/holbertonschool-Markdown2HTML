@@ -11,7 +11,6 @@ def markdown2html(*args):
     filename = 'README.md'
     if num_args < 2:
         print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
-
     if not os.path.exists(filename):
         print(f"Missing {filename}", file=sys.stderr)
         exit(1)
