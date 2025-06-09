@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 import sys
 import os
-def markdown2html(markdown, output):
+def markdown2html(*args):
+    num_args = len(args) - 1
     filename = 'README.md'
-    if len(sys.argv) < 2:
+    if num_args < 2:
         print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
-        exit(1)
+
     if not os.path.exists(filename):
         print(f"Missing {filename}", file=sys.stderr)
         exit(1)
@@ -14,5 +15,5 @@ def markdown2html(markdown, output):
         exit(0)
 
 if __name__ == "__main__":
-    markdown2html("README.md", "README.html")
-    print(__import__("markdown2html").__doc__)
+    markdown2html('README.md', 'README.html')
+print(__import__("markdown2html").__doc__)
