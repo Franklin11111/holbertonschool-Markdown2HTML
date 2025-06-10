@@ -16,7 +16,6 @@ if __name__ == "__main__":
         print(f"Missing {filename}", file=sys.stderr)
         exit(1)
     else:
-        print()
         exit(0)
 
 print(__import__("markdown2html").__doc__)
