@@ -14,14 +14,14 @@ if __name__ == "__main__":
         exit(1)
     if sys.argv[1] != 'README.md' or sys.argv[2] != 'README.html':
         print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
+    elif 'bla.md' not in sys.argv:
+        print("Missing bla.md", file=sys.stderr)
         exit(1)
     filename = 'README.md'
     if not os.path.exists(filename):
         print(f"Missing {filename}", file=sys.stderr)
         exit(1)
-    if 'bla.md' not in sys.argv:
-        print("Missing bla.md", file=sys.stderr)
-        exit(1)
+
     else:
         print()
         exit(0)
