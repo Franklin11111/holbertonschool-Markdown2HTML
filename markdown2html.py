@@ -5,7 +5,17 @@ import os
 
 def markdown2html(markdown, output):
     # This function converts markdown to html
-    pass
+    with open(markdown, "r") as file:
+        content = file.read()
+    html_output = ""
+    for line in content.splitlines():
+        line = line.strip()
+        if line.startswith("#"):
+            level = line.count("#")
+            md_content = line[level:].strip()
+            html_output += f"<h{level}>{md_content}</h{level}>\n"
+    with open(output, "w") as file:
+        file.write(html_output)
 
 
 if __name__ == "__main__":
@@ -28,6 +38,7 @@ if __name__ == "__main__":
         print(f"Missing {filename}", file=sys.stderr)
         exit(1)
     else:
+        markdown2html('README.md', "README.html")
         print()
         exit(0)
 
