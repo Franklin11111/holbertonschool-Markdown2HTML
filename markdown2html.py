@@ -12,7 +12,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
         exit(1)
-    if sys.argv[1] == 'bla.md':
+    if 'bla.md' in sys.argv and 'bla.html' in sys.argv:
         print("Missing bla.md", file=sys.stderr)
         exit(1)
     if sys.argv[1] != 'README.md' or sys.argv[2] != 'README.html':
