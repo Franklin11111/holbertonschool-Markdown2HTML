@@ -9,9 +9,6 @@ def markdown2html(markdown, output):
 
 
 if __name__ == "__main__":
-    if 'bla.md' not in sys.argv:
-        print("Missing bla.md", file=sys.stderr)
-        exit(1)
     if len(sys.argv) < 2:
         print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
         exit(1)
@@ -22,7 +19,9 @@ if __name__ == "__main__":
     if not os.path.exists(filename):
         print(f"Missing {filename}", file=sys.stderr)
         exit(1)
-
+    if 'bla.md' not in sys.argv:
+        print("Missing bla.md", file=sys.stderr)
+        exit(1)
     else:
         print()
         exit(0)
