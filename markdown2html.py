@@ -2,7 +2,7 @@
 """
 This module is for converting markdown to html
 """
-print(__import__("markdown2html").__doc__)
+
 import sys
 import os
 def markdown2html(markdown, output):
@@ -22,5 +22,6 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
 
+    print(__import__("markdown2html").__doc__)
 
 
