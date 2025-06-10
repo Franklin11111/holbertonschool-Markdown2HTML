@@ -25,7 +25,7 @@ if __name__ == "__main__":
         exit(1)
     if os.path.exists('bla.md'):
         print()
-        exit(1)
+        exit(0)
     else:
         print()
         exit(0)
