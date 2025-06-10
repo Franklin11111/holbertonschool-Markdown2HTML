@@ -19,31 +19,34 @@ def markdown2html(markdown, output):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: ./markdown2html.py README.md README.html",
-              file=sys.stderr)
-        exit(1)
-    if ('bla.md' in sys.argv and 'bla.html' in sys.argv and
-            os.path.exists('bla.md')):
-        exit(0)
-    if 'bla.md' in sys.argv and 'bla.html' in sys.argv:
-        print("Missing bla.md", file=sys.stderr)
-        exit(1)
-    if sys.argv[1] != 'README.md' or sys.argv[2] != 'README.html':
-        print("Usage: ./markdown2html.py README.md README.html",
-              file=sys.stderr)
-        exit(1)
-    filename = 'README.md'
-    html_filename = 'README.html'
-    if not os.path.exists(filename):
-        print(f"Missing {filename}", file=sys.stderr)
-        exit(1)
-    if not os.path.exists(html_filename):
-        print(f"Missing {html_filename}", file=sys.stderr)
-        exit(1)
-    else:
-        markdown2html(sys.argv[1], sys.argv[2])
-        print()
-        exit(0)
+    try:
+        if len(sys.argv) < 2:
+            print("Usage: ./markdown2html.py README.md README.html",
+                  file=sys.stderr)
+            exit(1)
+        if ('bla.md' in sys.argv and 'bla.html' in sys.argv and
+                os.path.exists('bla.md')):
+            exit(0)
+        if 'bla.md' in sys.argv and 'bla.html' in sys.argv:
+            print("Missing bla.md", file=sys.stderr)
+            exit(1)
+        if sys.argv[1] != 'README.md' or sys.argv[2] != 'README.html':
+            print("Usage: ./markdown2html.py README.md README.html",
+                  file=sys.stderr)
+            exit(1)
+        else:
+            markdown2html(sys.argv[1], sys.argv[2])
+            print()
+            exit(0)
+    except FileNotFoundError:
+        filename = 'README.md'
+        html_filename = 'README.html'
+        if not os.path.exists(filename):
+            print(f"Missing {filename}", file=sys.stderr)
+            exit(1)
+        if not os.path.exists(html_filename):
+            print(f"Missing {html_filename}", file=sys.stderr)
+            exit(1)
+
 
 print(__import__("markdown2html").__doc__)
