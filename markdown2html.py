@@ -16,6 +16,8 @@ def markdown2html(markdown, output):
             html_output += f"<h{level}>{md_content}</h{level}>\n"
     with open(output, "w") as file:
         file.write(html_output)
+    with open(output, "r") as file:
+        content_html = file.read()
 
 
 if __name__ == "__main__":
@@ -23,9 +25,6 @@ if __name__ == "__main__":
     if not os.path.exists(filename):
         print(f"Missing {filename}", file=sys.stderr)
         exit(1)
-    # if not os.path.exists(html_filename):
-    #     print(f"Missing {html_filename}", file=sys.stderr)
-    #     exit(1)
     if len(sys.argv) < 2:
         print("Usage: ./markdown2html.py README.md README.html",
               file=sys.stderr)
