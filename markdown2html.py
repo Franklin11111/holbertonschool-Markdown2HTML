@@ -1,7 +1,4 @@
-#!/usr/bin/env python3
-"""
-This module is for converting markdown to html
-"""
+#!/usr/bin/python3
 import sys
 import os
 def markdown2html(markdown, output):
