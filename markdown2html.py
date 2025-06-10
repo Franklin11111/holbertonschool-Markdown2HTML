@@ -35,8 +35,11 @@ if __name__ == "__main__":
         exit(1)
     filename = 'README.md'
     html_filename = 'README.html'
-    if not os.path.exists(filename) or not os.path.exists(html_filename):
+    if not os.path.exists(filename):
         print(f"Missing {filename}", file=sys.stderr)
+        exit(1)
+    if not os.path.exists(html_filename):
+        print(f"Missing {html_filename}", file=sys.stderr)
         exit(1)
     else:
         markdown2html(sys.argv[1], sys.argv[2])
