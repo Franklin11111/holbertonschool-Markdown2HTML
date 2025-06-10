@@ -33,7 +33,6 @@ if __name__ == "__main__":
         if sys.argv[1] != 'README.md' or sys.argv[2] != 'README.html':
             print("Usage: ./markdown2html.py README.md README.html",
                   file=sys.stderr)
-            exit(1)
         else:
             markdown2html(sys.argv[1], sys.argv[2])
             print()
