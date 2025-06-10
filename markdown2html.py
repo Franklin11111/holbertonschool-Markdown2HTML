@@ -20,5 +20,3 @@ if __name__ == "__main__":
         exit(0)
 
 print(__import__("markdown2html").__doc__)
-
-
