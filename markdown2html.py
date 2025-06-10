@@ -34,7 +34,8 @@ if __name__ == "__main__":
               file=sys.stderr)
         exit(1)
     filename = 'README.md'
-    if not os.path.exists(filename):
+    html_filename = 'README.html'
+    if not os.path.exists(filename) or not os.path.exists(html_filename):
         print(f"Missing {filename}", file=sys.stderr)
         exit(1)
     else:
