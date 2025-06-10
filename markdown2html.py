@@ -38,7 +38,7 @@ if __name__ == "__main__":
         print(f"Missing {filename}", file=sys.stderr)
         exit(1)
     else:
-        markdown2html('README.md', "README.html")
+        markdown2html(sys.argv[1], sys.argv[2])
         print()
         exit(0)
 
