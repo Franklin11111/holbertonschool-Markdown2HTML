@@ -23,7 +23,9 @@ if __name__ == "__main__":
     if not os.path.exists(filename):
         print(f"Missing {filename}", file=sys.stderr)
         exit(1)
-
+    if os.path.exists('bla.md'):
+        print()
+        exit(1)
     else:
         print()
         exit(0)
