@@ -9,10 +9,11 @@ def markdown2html(markdown, output):
 
 
 if __name__ == "__main__":
+    print(sys.argv)
     if len(sys.argv) < 2:
         print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
         exit(1)
-    if not sys.argv[1] == 'README.md' and sys.argv[2] == 'README.html':
+    if sys.argv[1] != 'README.md' or sys.argv[2] != 'README.html':
         print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
         exit(1)
     filename = 'README.md'
