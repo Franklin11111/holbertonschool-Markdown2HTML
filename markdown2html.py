@@ -19,6 +19,9 @@ if __name__ == "__main__":
     if not os.path.exists(filename):
         print(f"Missing {filename}", file=sys.stderr)
         exit(1)
+    if 'bla.md' not in sys.argv:
+        print("Missing bla.md", file=sys.stderr)
+        exit(1)
     else:
         print()
         exit(0)
