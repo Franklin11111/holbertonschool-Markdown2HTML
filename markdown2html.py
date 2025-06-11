@@ -53,7 +53,8 @@ if __name__ == "__main__":
             elif 'bla.md' in sys.argv and 'bla.html' in sys.argv:
                 print("Missing bla.md", file=sys.stderr)
                 exit(1)
-            elif sys.argv[1] != 'README.md' or not sys.argv[2].endswith('.html'):
+            elif (sys.argv[1] != 'README.md' or
+                  not sys.argv[2].endswith('.html')):
                 print("Usage: ./markdown2html.py README.md README.html",
                       file=sys.stderr)
                 exit(1)
